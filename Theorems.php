@@ -22,15 +22,15 @@ function theorems_Setup( &$parser ) {
 
 function theorem_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
 	$text = htmlspecialchars($input);
-	return $parser->internalParse("'''Theorem''': $text");// FIXME i18n
+	return $parser->internalParse("'''Theorem''': $text\n");// FIXME i18n
 }
 
 function proof_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
 	$text = htmlspecialchars($input);
-	return $parser->internalParse("''Proof'': $text {{Unicode|□}}");// FIXME i18n
+	return $parser->internalParse("''Proof'': $text \n ''q.e.d.''\n");// FIXME i18n
 }
 
 function definition_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
 	$text = htmlspecialchars($input);
-	return $parser->internalParse("'''Definition''': $text");// FIXME i18n
+	return $parser->internalParse("'''Definition''': $text\n");// FIXME i18n
 }
