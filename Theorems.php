@@ -17,20 +17,33 @@ function theorems_Setup( &$parser ) {
 	$parser->setHook( 'theorem', 'theorem_Render' );
 	$parser->setHook( 'proof', 'proof_Render' );
 	$parser->setHook( 'definition', 'definition_Render' );
+	$parser->setHook( 'lemma', 'lemma_Render' );
+	$parser->setHook( 'proposition', 'proposition_Render' );
+// 	$parser->setHook( 'esempio', 'example_Render' );
 	return true;
 }
 
-function theorem_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
-	$text = htmlspecialchars($input);
-	return $parser->internalParse("'''Theorem''': $text\n");// FIXME i18n
+function theorem_Render( $input, array $args, Parser $parser, PPFrame $frame )
+{
+	return $parser->internalParse("'''Theorem''': $input\n");// FIXME i18n
 }
 
-function proof_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
-	$text = htmlspecialchars($input);
-	return $parser->internalParse("''Proof'':\n:$text\n''q.e.d.''\n");// FIXME i18n
+function proof_Render( $input, array $args, Parser $parser, PPFrame $frame )
+{
+	return $parser->internalParse("''Proof'':\n:$input\n''q.e.d.''\n");// FIXME i18n
 }
 
-function definition_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
-	$text = htmlspecialchars($input);
-	return $parser->internalParse("'''Definition''': $text\n");// FIXME i18n
+function definition_Render( $input, array $args, Parser $parser, PPFrame $frame )
+{
+	return $parser->internalParse("'''Definition''': $input\n");// FIXME i18n
+}
+
+function lemma_Render( $input, array $args, Parser $parser, PPFrame $frame )
+{
+	return $parser->internalParse("'''Lemma''': $input\n");// FIXME i18n
+}
+
+function proposition_Render( $input, array $args, Parser $parser, PPFrame $frame )
+{
+	return $parser->internalParse("'''Proposition''': $input\n");// FIXME i18n
 }
