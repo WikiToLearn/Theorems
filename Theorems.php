@@ -27,7 +27,7 @@ function theorem_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
 
 function proof_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
 	$text = htmlspecialchars($input);
-	return $parser->internalParse("''Proof'': $text \n ''q.e.d.''\n");// FIXME i18n
+	return $parser->internalParse("''Proof'':\n:$text\n''q.e.d.''\n");// FIXME i18n
 }
 
 function definition_Render( $input, array $args, Parser $parser, PPFrame $frame ) {
