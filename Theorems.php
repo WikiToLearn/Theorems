@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgHooks['ParserFirstCallInit'][] = 'theorems_Setup';
 
-function dockerAccess_Setup( &$parser ) {
+function theorems_Setup( &$parser ) {
 	$parser->setHook( 'theorem', 'theorem_Render' );
 	$parser->setHook( 'proof', 'proof_Render' );
 	$parser->setHook( 'definition', 'definition_Render' );
